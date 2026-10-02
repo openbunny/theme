@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/openbunny/theme/compare/v0.1.0...v0.1.1) (2026-10-02)
+
+
+### Bug Fixes
+
+* include fonts for image rendering ([37d6188](https://github.com/openbunny/theme/commit/37d618845690d1a34ac5699c08181a9299405435))
+
 ## 0.1.0 (2026-10-02)
 
 
