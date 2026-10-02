@@ -259,7 +259,7 @@ names every recipe.
 
 ## Publishing
 
-Nothing is published. These steps need the owner:
+The owner controls package releases:
 
 1. Create the `@openbunny` npm scope and a GitHub environment named `npm`.
    Publish the first package version manually, then configure [npm Trusted
