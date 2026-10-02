@@ -1,9 +1,22 @@
 {
-  "name": "openbunny-theme-workspace",
+  "name": "@openbunny/theme",
   "version": "0.0.0",
   "private": true,
   "type": "module",
   "license": "MIT",
+  "exports": {
+    "./tokens": {
+      "types": "./packages/web/dist/tokens.d.ts",
+      "default": "./packages/web/dist/tokens.js"
+    },
+    "./contrast": {
+      "types": "./packages/web/dist/contrast.d.ts",
+      "default": "./packages/web/dist/contrast.js"
+    },
+    "./css/*.css": "./packages/web/css/*.css",
+    "./fonts/*": "./packages/web/fonts/*",
+    "./package.json": "./package.json"
+  },
   "engines": {
     "node": ">=24"
   },

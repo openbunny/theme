@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { describe, it } from 'node:test';
 import { tokens } from '../packages/web/src/tokens.ts';
+import { color } from '@openbunny/theme/tokens';
 
 const url = (path: string): URL => new URL(`../${path}`, import.meta.url);
 const json = (path: string): Record<string, Record<string, unknown>> =>
@@ -10,6 +11,10 @@ const json = (path: string): Record<string, Record<string, unknown>> =>
 const documentedGroups = ['text', 'leading', 'space', 'page', 'link'];
 
 describe('token source', () => {
+  it('exports the generated web tokens from the repository root', () => {
+    assert.deepEqual(color, tokens.color);
+  });
+
   it('has a role-based usage statement on every scale token', () => {
     const dimension = json('tokens/dimension.json');
     const missing: string[] = [];

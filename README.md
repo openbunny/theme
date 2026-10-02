@@ -116,15 +116,15 @@ builds an app that links both products with those flags.
 
 ## Consumers
 
-Until the owner approves publishing, consumers depend on a local checkout.
+Until the owner approves a release, consumers pin a Git commit.
 
-| Consumer | Dependency                                                                                    |
-| -------- | --------------------------------------------------------------------------------------------- |
-| Swift    | `.package(path: "../openbunny-theme")`, or `packages: OpenBunnyTheme: path:` in `project.yml` |
-| npm      | `"@openbunny/theme": "file:../openbunny-theme/packages/web"`                                  |
+| Consumer | Dependency                                                                          |
+| -------- | ----------------------------------------------------------------------------------- |
+| Swift    | `.package(url: "https://github.com/openbunny/theme.git", revision: "<commit-sha>")` |
+| npm      | `"@openbunny/theme": "github:openbunny/theme#<commit-sha>"`                         |
 
-A `file:` dependency resolves outside a Docker build context. A consumer that
-builds in a container must use a registry or tarball dependency instead.
+The root package exports the generated web files from `packages/web` for Git
+installs. The release workflow publishes `packages/web` to npm.
 
 ### Websites
 
