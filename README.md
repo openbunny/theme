@@ -1,8 +1,5 @@
 # theme
 
-> **Work in progress.** No release exists yet. Names, identifiers and
-> interfaces can change without notice.
-
 OpenBunny design tokens as one authored source with three generated outputs:
 CSS custom properties, typed TypeScript constants, and a Swift package with
 SwiftUI components. One repository and one release tag version all of them, so
@@ -116,12 +113,13 @@ builds an app that links both products with those flags.
 
 ## Consumers
 
-Until the owner approves a release, consumers pin a Git commit.
+Consumers pin an exact published version. Use a Git commit only for an
+unreleased change that has passed the consumer's checks.
 
-| Consumer | Dependency                                                                          |
-| -------- | ----------------------------------------------------------------------------------- |
-| Swift    | `.package(url: "https://github.com/openbunny/theme.git", revision: "<commit-sha>")` |
-| npm      | `"@openbunny/theme": "github:openbunny/theme#<commit-sha>"`                         |
+| Consumer | Dependency                                                                    |
+| -------- | ----------------------------------------------------------------------------- |
+| Swift    | `.package(url: "https://github.com/openbunny/theme.git", exact: "<version>")` |
+| npm      | `"@openbunny/theme": "<version>"`                                             |
 
 The root package exports the generated web files from `packages/web` for Git
 installs. The release workflow publishes `packages/web` to npm.
