@@ -37,6 +37,11 @@ import Testing
         #expect(space == expectedSpace)
     }
 
+    @Test func windowWidthEqualsToken() throws {
+        let width = try native("width")
+        #expect(width == ["window-minimum": WindowWidth.windowMinimum])
+    }
+
     @Test func everyRadiusIsSquare() {
         let radii = [
             Radius.sm, Radius.md, Radius.lg, Radius.xl, Radius.n2xl, Radius.n3xl, Radius.n4xl,

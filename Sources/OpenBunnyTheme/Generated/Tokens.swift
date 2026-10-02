@@ -114,6 +114,10 @@ public enum Spacing {
     public static let page: CGFloat = 24
 }
 
+public enum WindowWidth {
+    public static let windowMinimum: CGFloat = 280
+}
+
 public enum Metric {
     public static let borderWidth: CGFloat = 1
     public static let focusOutlineWidth: CGFloat = 2

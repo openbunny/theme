@@ -12,6 +12,12 @@
       "base": { "$value": 8 },
       "loose": { "$value": 16 },
       "page": { "$value": 24 }
+    },
+    "width": {
+      "window-minimum": {
+        "$value": 280,
+        "$description": "Role: minimum companion window width in points."
+      }
     }
   }
 }

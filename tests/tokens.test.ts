@@ -8,7 +8,7 @@ const url = (path: string): URL => new URL(`../${path}`, import.meta.url);
 const json = (path: string): Record<string, Record<string, unknown>> =>
   JSON.parse(readFileSync(url(path), 'utf8'));
 
-const documentedGroups = ['text', 'leading', 'space', 'page', 'link'];
+const documentedGroups = ['text', 'leading', 'space', 'page', 'link', 'width'];
 
 describe('token source', () => {
   it('exports the generated web tokens from the repository root', () => {

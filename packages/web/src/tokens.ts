@@ -41,6 +41,10 @@ export const focus = {
 
 export const measure = '65ch' as const;
 
+export const width = {
+  popup: '18rem',
+} as const;
+
 export const page = {
   'padding-x': '1.5rem',
   'padding-x-md': '2rem',
@@ -120,6 +124,7 @@ export const tokens = {
   borderWidth,
   focus,
   measure,
+  width,
   page,
   text,
   leading,

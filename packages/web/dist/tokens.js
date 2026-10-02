@@ -34,6 +34,9 @@ export const focus = {
     'outline-offset': '2px',
 };
 export const measure = '65ch';
+export const width = {
+    popup: '18rem',
+};
 export const page = {
     'padding-x': '1.5rem',
     'padding-x-md': '2rem',
@@ -103,6 +106,7 @@ export const tokens = {
     borderWidth,
     focus,
     measure,
+    width,
     page,
     text,
     leading,

@@ -41,14 +41,14 @@ composite types. Style Dictionary reads them and `just generate` writes every
 output; generated files are committed so a consumer needs no JavaScript
 toolchain.
 
-| File             | Holds                                                             |
-| ---------------- | ----------------------------------------------------------------- |
-| `color.json`     | Palette, aliases, and `color-scheme`                              |
-| `font.json`      | Font stacks and weights                                           |
-| `dimension.json` | Radius, border, focus, measure, page padding, type scale, spacing |
-| `duration.json`  | Cursor blink timing                                               |
-| `native.json`    | SwiftUI point sizes and spacing; not derived from the rem scale   |
-| `extension.json` | Variable names that browser-extension pages expect                |
+| File             | Holds                                                                          |
+| ---------------- | ------------------------------------------------------------------------------ |
+| `color.json`     | Palette, aliases, and `color-scheme`                                           |
+| `font.json`      | Font stacks and weights                                                        |
+| `dimension.json` | Radius, border, focus, measure, popup width, page padding, type scale, spacing |
+| `duration.json`  | Cursor blink timing                                                            |
+| `native.json`    | SwiftUI point sizes, spacing, and window width; not derived from the rem scale |
+| `extension.json` | Variable names that browser-extension pages expect                             |
 
 Print overrides are not tokens. A consumer keeps its own `@media print` rules.
 

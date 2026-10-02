@@ -33,6 +33,9 @@ export declare const focus: {
     readonly 'outline-offset': '2px';
 };
 export declare const measure: '65ch';
+export declare const width: {
+    readonly popup: '18rem';
+};
 export declare const page: {
     readonly 'padding-x': '1.5rem';
     readonly 'padding-x-md': '2rem';
@@ -131,6 +134,9 @@ export declare const tokens: {
         readonly 'outline-offset': '2px';
     };
     readonly measure: "65ch";
+    readonly width: {
+        readonly popup: '18rem';
+    };
     readonly page: {
         readonly 'padding-x': '1.5rem';
         readonly 'padding-x-md': '2rem';

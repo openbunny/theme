@@ -40,6 +40,13 @@
     "$value": "65ch",
     "$description": "Role: maximum line length of the page column."
   },
+  "width": {
+    "$type": "dimension",
+    "popup": {
+      "$value": "18rem",
+      "$description": "Role: width of a browser extension popup."
+    }
+  },
   "page": {
     "$type": "dimension",
     "padding-x": {

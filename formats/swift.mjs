@@ -111,7 +111,7 @@ public enum Palette {
 ${palette}
     ]
 }
-${block('FontFamily', families)}${block('FontWeights', fontWeights)}${block('Radius', numbers('radius'))}${block('TextSize', numbers('native', 'size'))}${block('Spacing', numbers('native', 'space'))}${block('Metric', metrics)}
+${block('FontFamily', families)}${block('FontWeights', fontWeights)}${block('Radius', numbers('radius'))}${block('TextSize', numbers('native', 'size'))}${block('Spacing', numbers('native', 'space'))}${block('WindowWidth', numbers('native', 'width'))}${block('Metric', metrics)}
 public enum Scheme {
     public static let colorScheme: ColorScheme = .${scheme.$value}
 }
