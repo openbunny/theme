@@ -261,11 +261,14 @@ names every recipe.
 
 Nothing is published. These steps need the owner:
 
-1. Create the `@openbunny` npm scope, add the `NPM_TOKEN` secret and a GitHub
-   environment named `npm`.
-2. Merge the release-please pull request. The tag `vX.Y.Z` is the SwiftPM
-   version, and the release workflow publishes `@openbunny/theme` with the same
-   number and provenance.
+1. Create the `@openbunny` npm scope and a GitHub environment named `npm`.
+   Publish the first package version manually, then configure [npm Trusted
+   Publishing](https://docs.npmjs.com/trusted-publishers/) for `openbunny/theme`,
+   `release.yml`, and environment `npm`. The package must exist before the
+   trusted publisher can be configured.
+2. Merge a later release-please pull request. Its `vX.Y.Z` tag is the SwiftPM
+   version; the release workflow publishes `@openbunny/theme` with the same
+   number through npm's OIDC authentication and provenance.
 3. In each consumer, replace the local-path dependency with the published one:
    `.package(url: "https://github.com/openbunny/theme.git", exact: "X.Y.Z")` for
    Swift and an exact `"@openbunny/theme": "X.Y.Z"` for npm.

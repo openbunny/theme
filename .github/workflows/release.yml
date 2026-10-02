@@ -38,6 +38,4 @@ jobs:
         run: test "v$(node -p "require('./packages/web/package.json').version")" = "$TAG"
       - name: publish
         working-directory: packages/web
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npm publish --provenance --access public
+        run: npm publish --access public
