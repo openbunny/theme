@@ -1,6 +1,0 @@
-version: 3
-rules:
-  # openbunny/.github is private; the Actions token cannot list its tags, so pinact cannot verify these pins. Remove the rule when the repository is public.
-  - ignore: true
-    conditions:
-      - expr: ActionName matches "openbunny/\\.github/.*"

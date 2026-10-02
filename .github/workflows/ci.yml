@@ -13,7 +13,7 @@ jobs:
     name: Web
     permissions:
       contents: read
-    uses: openbunny/.github/.github/workflows/reusable-check.yml@67646af6bbf88deef37c376a81c80c40a40559e1 # v1.0.0
+    uses: openbunny/.github/.github/workflows/reusable-check.yml@8a67b83aedd4176c2629ac2cb6c9f53041c23abd # v0.1.0
     with:
       runner: ubuntu-24.04
       tools: node just
@@ -24,7 +24,7 @@ jobs:
     name: Swift
     permissions:
       contents: read
-    uses: openbunny/.github/.github/workflows/reusable-check.yml@67646af6bbf88deef37c376a81c80c40a40559e1 # v1.0.0
+    uses: openbunny/.github/.github/workflows/reusable-check.yml@8a67b83aedd4176c2629ac2cb6c9f53041c23abd # v0.1.0
     with:
       runner: macos-26
       xcode: '26.0'
@@ -35,7 +35,7 @@ jobs:
     name: npm audit
     permissions:
       contents: read
-    uses: openbunny/.github/.github/workflows/reusable-check.yml@67646af6bbf88deef37c376a81c80c40a40559e1 # v1.0.0
+    uses: openbunny/.github/.github/workflows/reusable-check.yml@8a67b83aedd4176c2629ac2cb6c9f53041c23abd # v0.1.0
     with:
       runner: ubuntu-24.04
       tools: node just
@@ -65,13 +65,13 @@ jobs:
     name: REUSE
     permissions:
       contents: read
-    uses: openbunny/.github/.github/workflows/reusable-reuse.yml@67646af6bbf88deef37c376a81c80c40a40559e1 # v1.0.0
+    uses: openbunny/.github/.github/workflows/reusable-reuse.yml@8a67b83aedd4176c2629ac2cb6c9f53041c23abd # v0.1.0
 
   gitleaks:
     name: Gitleaks
     permissions:
       contents: read
-    uses: openbunny/.github/.github/workflows/reusable-gitleaks.yml@67646af6bbf88deef37c376a81c80c40a40559e1 # v1.0.0
+    uses: openbunny/.github/.github/workflows/reusable-gitleaks.yml@8a67b83aedd4176c2629ac2cb6c9f53041c23abd # v0.1.0
     with:
       version: 8.30.1
 
@@ -79,7 +79,7 @@ jobs:
     name: Zizmor
     permissions:
       contents: read
-    uses: openbunny/.github/.github/workflows/reusable-zizmor.yml@67646af6bbf88deef37c376a81c80c40a40559e1 # v1.0.0
+    uses: openbunny/.github/.github/workflows/reusable-zizmor.yml@8a67b83aedd4176c2629ac2cb6c9f53041c23abd # v0.1.0
     with:
       version: 1.30.1
 
@@ -88,7 +88,7 @@ jobs:
     if: github.event_name == 'pull_request'
     permissions:
       contents: read
-    uses: openbunny/.github/.github/workflows/reusable-dco.yml@67646af6bbf88deef37c376a81c80c40a40559e1 # v1.0.0
+    uses: openbunny/.github/.github/workflows/reusable-dco.yml@8a67b83aedd4176c2629ac2cb6c9f53041c23abd # v0.1.0
 
   gate:
     name: Gate
