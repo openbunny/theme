@@ -107,4 +107,16 @@ describe('fonts', () => {
     assert.ok(files.includes('OFL-CourierPrime.txt'));
     assert.ok(files.includes('OFL-JetBrainsMono.txt'));
   });
+
+  it('ships WOFF fonts for image renderers', () => {
+    for (const family of ['courier-prime', 'jetbrains-mono']) {
+      for (const weight of [400, 700]) {
+        assert.ok(
+          existsSync(
+            url(`packages/web/fonts/${family}-latin-${weight}-normal.woff`),
+          ),
+        );
+      }
+    }
+  });
 });

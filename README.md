@@ -231,9 +231,13 @@ Courier Prime and JetBrains Mono are licensed under the SIL Open Font License
 - The Swift package bundles TrueType files, because CoreText cannot register
   WOFF2. `just fonts` downloads them from the upstream sources and verifies
   SHA-256 pins; no package manager distributes these files with a checksum.
-- The npm package bundles the Latin 400 and 700 WOFF2 files that Fontsource
+- The npm package bundles the Latin 400 and 700 WOFF and WOFF2 files that Fontsource
   builds from the same fonts. `just generate` copies them from the pinned
   `@fontsource` devDependencies.
+
+Use WOFF2 for browser rendering. Image renderers that do not accept WOFF2 can
+read the WOFF files through the package's `fonts/*` export.
+
 - Website artwork is not part of this repository.
 
 ## Gates

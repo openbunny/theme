@@ -19,7 +19,9 @@ generate:
     style-dictionary build --config style-dictionary.config.mjs
     for family in courier-prime jetbrains-mono; do
         for weight in 400 700; do
-            cp "node_modules/@fontsource/$family/files/$family-latin-$weight-normal.woff2" packages/web/fonts/
+            for format in woff woff2; do
+                cp "node_modules/@fontsource/$family/files/$family-latin-$weight-normal.$format" packages/web/fonts/
+            done
         done
     done
     prettier --write packages/web/css/tokens.css packages/web/css/tailwind.css \
