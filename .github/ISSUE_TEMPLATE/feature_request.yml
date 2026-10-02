@@ -1,0 +1,38 @@
+name: Feature request
+description: Suggest a token, component, or output
+title: '[feature]: '
+labels: ['type/feature', 'status/needs-triage']
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - tokens
+        - web (CSS, TypeScript, WOFF2 fonts)
+        - swift (OpenBunnyTheme, OpenBunnyUI)
+        - generator
+        - new output
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: The task that is hard or impossible today.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: The token, component, or output you want, and how a consumer would use it.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives
+      description: Other approaches you considered.
+    validations:
+      required: false

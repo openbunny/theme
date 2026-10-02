@@ -1,0 +1,43 @@
+name: Release
+on:
+  push:
+    tags: ['v*']
+permissions: {}
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  ci:
+    name: CI
+    permissions:
+      contents: read
+    uses: ./.github/workflows/ci.yml # zizmor: ignore[self-repository] actionlint v1.7.12 rejects the $/ form; keep ./ until actionlint accepts it
+
+  npm:
+    name: Publish npm package
+    needs: [ci]
+    permissions:
+      contents: read
+      id-token: write # npm mints the provenance attestation from this OIDC token
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    environment: npm
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version-file: package.json
+          registry-url: https://registry.npmjs.org
+          package-manager-cache: false
+      - run: npm ci
+      - name: tag equals package version
+        env:
+          TAG: ${{ github.ref_name }}
+        run: test "v$(node -p "require('./packages/web/package.json').version")" = "$TAG"
+      - name: publish
+        working-directory: packages/web
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish --provenance --access public

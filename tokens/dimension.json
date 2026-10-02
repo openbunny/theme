@@ -1,0 +1,167 @@
+{
+  "radius": {
+    "$type": "number",
+    "sm": {
+      "$value": 0
+    },
+    "md": {
+      "$value": 0
+    },
+    "lg": {
+      "$value": 0
+    },
+    "xl": {
+      "$value": 0
+    },
+    "2xl": {
+      "$value": 0
+    },
+    "3xl": {
+      "$value": 0
+    },
+    "4xl": {
+      "$value": 0
+    }
+  },
+  "border-width": {
+    "$type": "dimension",
+    "$value": "1px"
+  },
+  "focus": {
+    "$type": "dimension",
+    "outline-width": {
+      "$value": "2px"
+    },
+    "outline-offset": {
+      "$value": "2px"
+    }
+  },
+  "measure": {
+    "$value": "65ch",
+    "$description": "Role: maximum line length of the page column."
+  },
+  "page": {
+    "$type": "dimension",
+    "padding-x": {
+      "$value": "1.5rem",
+      "$description": "Role: horizontal page padding below the md breakpoint."
+    },
+    "padding-x-md": {
+      "$value": "2rem",
+      "$description": "Role: horizontal page padding from the md breakpoint."
+    },
+    "padding-y": {
+      "$value": "2rem",
+      "$description": "Role: vertical page padding below the md breakpoint."
+    },
+    "padding-y-md": {
+      "$value": "2.5rem",
+      "$description": "Role: vertical page padding from the md breakpoint."
+    }
+  },
+  "text": {
+    "$type": "dimension",
+    "label": {
+      "$value": "0.68rem",
+      "$description": "Role: text size of labels on command and key blocks."
+    },
+    "chip": {
+      "$value": "0.7rem",
+      "$description": "Role: text size of chips and error notices."
+    },
+    "meta": {
+      "$value": "0.72rem",
+      "$description": "Role: text size of navigation, footer and contact links."
+    },
+    "caption": {
+      "$value": "0.75rem",
+      "$description": "Role: text size of page captions and header details."
+    },
+    "note": {
+      "$value": "0.78rem",
+      "$description": "Role: text size of notes and history entries."
+    },
+    "small": {
+      "$value": "0.8rem",
+      "$description": "Role: text size of fact lists and status lines."
+    },
+    "body": {
+      "$value": "0.92rem",
+      "$description": "Role: text size of long-form prose."
+    },
+    "lead": {
+      "$value": "1.05rem",
+      "$description": "Role: text size of section headings."
+    },
+    "title": {
+      "$value": "1.4rem",
+      "$description": "Role: text size of page titles and status headings."
+    },
+    "display": {
+      "$type": "string",
+      "$value": "clamp(2rem, 9vw, 3.25rem)",
+      "$description": "Role: text size of the top-level heading."
+    }
+  },
+  "leading": {
+    "$type": "number",
+    "display": {
+      "$value": 1.05,
+      "$description": "Role: line height of the top-level heading."
+    },
+    "block": {
+      "$value": 1.6,
+      "$description": "Role: line height of command blocks and intro text."
+    },
+    "mono": {
+      "$value": 1.65,
+      "$description": "Role: line height of monospace blocks."
+    },
+    "prose": {
+      "$value": 1.7,
+      "$description": "Role: line height of long-form prose."
+    }
+  },
+  "space": {
+    "1": {
+      "$value": "0.25rem",
+      "$description": "Role: spacing step 1 of the Tailwind spacing scale for gap, margin and padding."
+    },
+    "2": {
+      "$value": "0.5rem",
+      "$description": "Role: spacing step 2 of the Tailwind spacing scale for gap, margin and padding."
+    },
+    "3": {
+      "$value": "0.75rem",
+      "$description": "Role: spacing step 3 of the Tailwind spacing scale for gap, margin and padding."
+    },
+    "4": {
+      "$value": "1rem",
+      "$description": "Role: spacing step 4 of the Tailwind spacing scale for gap, margin and padding."
+    },
+    "6": {
+      "$value": "1.5rem",
+      "$description": "Role: spacing step 6 of the Tailwind spacing scale for gap, margin and padding."
+    },
+    "8": {
+      "$value": "2rem",
+      "$description": "Role: spacing step 8 of the Tailwind spacing scale for gap, margin and padding."
+    },
+    "10": {
+      "$value": "2.5rem",
+      "$description": "Role: spacing step 10 of the Tailwind spacing scale for gap, margin and padding."
+    },
+    "$type": "dimension",
+    "half": {
+      "$value": "0.125rem",
+      "$description": "Role: vertical padding of chips."
+    }
+  },
+  "link": {
+    "$type": "dimension",
+    "underline-offset": {
+      "$value": "4px",
+      "$description": "Role: underline offset of links."
+    }
+  }
+}

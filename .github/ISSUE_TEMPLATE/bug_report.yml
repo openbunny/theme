@@ -1,0 +1,45 @@
+name: Bug report
+description: A generated output differs from its token or breaks a build
+title: '[bug]: '
+labels: ['type/bug', 'status/needs-triage']
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - tokens
+        - web (CSS, TypeScript, WOFF2 fonts)
+        - swift (OpenBunnyTheme, OpenBunnyUI)
+        - generator
+        - ci
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed
+      description: What happened, including any error text and the consuming project.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected
+      description: What you expected instead.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Package version
+      description: The `@openbunny/theme` version or the SwiftPM tag in use.
+    validations:
+      required: true
+  - type: input
+    id: toolchain
+    attributes:
+      label: Toolchain
+      description: The output of `swift --version` or `node --version`, whichever applies.
+    validations:
+      required: false

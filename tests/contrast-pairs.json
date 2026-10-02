@@ -1,0 +1,112 @@
+{
+  "body": {
+    "min": 4.5,
+    "grounds": [
+      "color.paper",
+      "color.paper-inset",
+      "color.paper-deep",
+      "color.background"
+    ],
+    "foregrounds": [
+      "color.foreground",
+      "color.ink-deep",
+      "color.ink",
+      "color.ink-mid",
+      "color.muted",
+      "color.sprout",
+      "color.valid"
+    ]
+  },
+  "ui": {
+    "min": 3,
+    "grounds": [
+      "color.paper",
+      "color.paper-inset",
+      "color.paper-deep",
+      "color.background"
+    ],
+    "foregrounds": [
+      "color.ink-soft",
+      "color.line",
+      "color.border",
+      "color.ring"
+    ]
+  },
+  "pairs": [
+    {
+      "role": "selection",
+      "min": 4.5,
+      "foreground": "color.ink-deep",
+      "ground": "color.sprout-fill"
+    },
+    {
+      "role": "extension button",
+      "min": 4.5,
+      "foreground": "extension.primary-foreground",
+      "ground": "extension.primary"
+    },
+    {
+      "role": "extension input",
+      "min": 4.5,
+      "foreground": "color.foreground",
+      "ground": "extension.input"
+    },
+    {
+      "role": "extension muted text",
+      "min": 4.5,
+      "foreground": "extension.muted-foreground",
+      "ground": "extension.card"
+    },
+    {
+      "role": "extension error text",
+      "min": 4.5,
+      "foreground": "extension.destructive",
+      "ground": "extension.card"
+    },
+    {
+      "role": "extension card text",
+      "min": 4.5,
+      "foreground": "color.foreground",
+      "ground": "extension.card"
+    },
+    {
+      "role": "expired text",
+      "min": 4.5,
+      "foreground": "color.expired",
+      "ground": "color.paper"
+    },
+    {
+      "role": "expired text",
+      "min": 4.5,
+      "foreground": "color.expired",
+      "ground": "color.paper-inset"
+    },
+    {
+      "role": "expired text",
+      "min": 4.5,
+      "foreground": "color.expired",
+      "ground": "color.background"
+    },
+    {
+      "role": "expired surface text",
+      "min": 4.5,
+      "foreground": "color.paper",
+      "ground": "color.expired"
+    },
+    {
+      "role": "expired graphic fill",
+      "min": 3,
+      "foreground": "color.expired",
+      "ground": "color.sprout-fill"
+    }
+  ],
+  "evidence": "color.expired is text only on paper, paper-inset and background, and a surface, graphic fill or cursor background elsewhere. Measured with just contrast: expired on paper 4.62:1, on paper-inset 4.54:1, on paper-deep 4.43:1, so expired text on paper-deep fails WCAG 2.1 1.4.3 and is listed under disallowed. On the source website it is a surface (background with paper text), a graphic fill (on the sprout-fill track) and a cursor background (expired freshness state). No text, border or stroke uses it, and chips on paper-deep never contain expired content. extension.destructive on extension.card covers expired-coloured text in extensions.",
+  "disallowed": [
+    {
+      "role": "expired text",
+      "min": 4.5,
+      "foreground": "color.expired",
+      "ground": "color.paper-deep"
+    }
+  ]
+}

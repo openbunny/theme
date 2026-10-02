@@ -1,0 +1,14 @@
+{
+  "font": {
+    "$type": "fontFamily",
+    "display": { "$value": ["Courier Prime", "monospace"] },
+    "sc": { "$value": ["Courier Prime", "monospace"] },
+    "mono": { "$value": ["JetBrains Mono", "monospace"] },
+    "sans": { "$value": "{font.display}" }
+  },
+  "font-weight": {
+    "$type": "fontWeight",
+    "regular": { "$value": 400 },
+    "bold": { "$value": 700 }
+  }
+}

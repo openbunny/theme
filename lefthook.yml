@@ -1,0 +1,21 @@
+pre-commit:
+  parallel: true
+  commands:
+    prettier:
+      glob: '*.{json,jsonc,md,yml,yaml,css,mjs,ts}'
+      run: prettier --write {staged_files}
+      stage_fixed: true
+    swift-format:
+      glob: '*.swift'
+      run: swift format -i {staged_files}
+      stage_fixed: true
+
+pre-push:
+  parallel: true
+  commands:
+    generate-check:
+      run: just generate-check
+    test:
+      run: just test
+    lint:
+      run: just lint

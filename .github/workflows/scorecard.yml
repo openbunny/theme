@@ -1,0 +1,19 @@
+name: scorecard
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+permissions: {}
+jobs:
+  scorecard:
+    name: Scorecard
+    # scorecard-action cannot read a private repository with GITHUB_TOKEN; the job runs once the repository is public.
+    if: github.event.repository.private == false
+    permissions:
+      contents: read
+      id-token: write # mints the OIDC token scorecard-action uses to sign published results
+    uses: openbunny/.github/.github/workflows/reusable-scorecard.yml@67646af6bbf88deef37c376a81c80c40a40559e1 # v1.0.0
+    with:
+      publish: true

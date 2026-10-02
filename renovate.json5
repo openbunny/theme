@@ -1,0 +1,21 @@
+{
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  extends: ['github>openbunny/.github'],
+  postUpdateOptions: ['npmDedupe'],
+  packageRules: [
+    // A token output changes when the generator or the fonts change, so these
+    // bump through a pull request that carries the regenerated files.
+    {
+      matchPackageNames: ['style-dictionary', '/^@fontsource//'],
+      groupName: 'token generation',
+      automerge: false,
+    },
+    {
+      matchManagers: ['npm'],
+      matchDepTypes: ['devDependencies'],
+      matchUpdateTypes: ['minor', 'patch'],
+      excludePackageNames: ['style-dictionary', '/^@fontsource//'],
+      automerge: true,
+    },
+  ],
+}

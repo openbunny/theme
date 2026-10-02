@@ -1,0 +1,26 @@
+{
+  "color": {
+    "$type": "color",
+    "paper": { "$value": "#fffaeb" },
+    "paper-inset": { "$value": "#fff8e3" },
+    "paper-deep": { "$value": "#fff5d6" },
+    "foreground": { "$value": "#2a2217" },
+    "ink-deep": { "$value": "{color.foreground}" },
+    "ink": { "$value": "#5c4b31" },
+    "ink-mid": { "$value": "#786340" },
+    "muted": { "$value": "{color.ink-mid}" },
+    "ink-soft": { "$value": "#93835c" },
+    "line": { "$value": "{color.ink-soft}" },
+    "sprout": { "$value": "#3f7a13" },
+    "sprout-fill": { "$value": "#aedf78" },
+    "valid": { "$value": "{color.sprout}" },
+    "expired": {
+      "$value": "#c64900",
+      "$description": "Text on paper, paper-inset and background only; expired text on paper-deep fails WCAG 2.1 4.5:1. Also a surface, graphic fill and cursor background."
+    },
+    "background": { "$value": "{color.paper}" },
+    "border": { "$value": "{color.line}" },
+    "ring": { "$value": "#7a6a4a" }
+  },
+  "color-scheme": { "$value": "light" }
+}

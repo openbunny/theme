@@ -1,0 +1,9 @@
+{
+  "duration": {
+    "$type": "duration",
+    "blink": { "$value": "1.1s" }
+  },
+  "easing": {
+    "blink": { "$value": "steps(1)" }
+  }
+}

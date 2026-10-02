@@ -1,0 +1,35 @@
+{
+  "name": "@openbunny/theme",
+  "version": "0.0.0",
+  "description": "OpenBunny design tokens: CSS custom properties, typed constants and fonts.",
+  "license": "MIT",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/openbunny/theme.git",
+    "directory": "packages/web"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "sideEffects": false,
+  "exports": {
+    "./tokens": {
+      "types": "./dist/tokens.d.ts",
+      "default": "./dist/tokens.js"
+    },
+    "./contrast": {
+      "types": "./dist/contrast.d.ts",
+      "default": "./dist/contrast.js"
+    },
+    "./css/*.css": "./css/*.css",
+    "./fonts/*": "./fonts/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "css",
+    "dist",
+    "fonts"
+  ]
+}

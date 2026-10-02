@@ -1,0 +1,12 @@
+{
+  "extension": {
+    "$type": "color",
+    "card": { "$value": "{color.paper-inset}" },
+    "primary": { "$value": "{color.ink-deep}" },
+    "primary-foreground": { "$value": "{color.paper}" },
+    "muted-foreground": { "$value": "{color.muted}" },
+    "input": { "$value": "{color.paper-inset}" },
+    "destructive": { "$value": "{color.expired}" },
+    "radius": { "$type": "dimension", "$value": "0px" }
+  }
+}

@@ -1,0 +1,8 @@
+node_modules/
+.build/
+.check/
+packages/web/dist/
+tests/fixtures/
+package-lock.json
+CHANGELOG.md
+LICENSES/

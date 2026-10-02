@@ -1,0 +1,22 @@
+theme
+Copyright (c) 2026 OpenBunny
+
+This distribution bundles the following fonts. The Swift package ships them as
+TrueType files and the npm package ships the Latin subset as WOFF2 files, built
+by Fontsource from the same sources. Each font file is accompanied by its
+license text in the same directory (`OFL-CourierPrime.txt`,
+`OFL-JetBrainsMono.txt`).
+
+Courier Prime
+Copyright 2015 The Courier Prime Project Authors
+Licensed under the SIL Open Font License, Version 1.1.
+https://github.com/quoteunquoteapps/CourierPrime
+
+JetBrains Mono
+Copyright 2020 The JetBrains Mono Project Authors
+Licensed under the SIL Open Font License, Version 1.1.
+https://github.com/JetBrains/JetBrainsMono
+
+The SIL Open Font License permits bundling and redistribution with software and
+forbids selling the font files by themselves. A modified font must not use the
+reserved font names.

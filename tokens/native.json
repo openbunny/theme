@@ -1,0 +1,17 @@
+{
+  "native": {
+    "$type": "number",
+    "size": {
+      "caption": { "$value": 11 },
+      "body": { "$value": 13 },
+      "heading": { "$value": 15 },
+      "title": { "$value": 17 }
+    },
+    "space": {
+      "tight": { "$value": 4 },
+      "base": { "$value": 8 },
+      "loose": { "$value": 16 },
+      "page": { "$value": 24 }
+    }
+  }
+}

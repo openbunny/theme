@@ -1,0 +1,24 @@
+{
+  "workspaces": {
+    ".": {
+      "entry": [
+        "style-dictionary.config.mjs",
+        "tests/*.test.ts",
+        "tests/contrast-report.ts",
+      ],
+      "project": ["formats/*.mjs", "tests/*.ts"],
+      // The baseline is CSS data, not TypeScript source.
+      "ignore": ["tests/fixtures/**"],
+      // Each of these is run by a justfile recipe, which knip does not read.
+      "ignoreDependencies": [
+        "@fontsource/courier-prime",
+        "@fontsource/jetbrains-mono",
+        "prettier",
+        "style-dictionary",
+      ],
+    },
+    "packages/web": {
+      "project": ["src/*.ts"],
+    },
+  },
+}

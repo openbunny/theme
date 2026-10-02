@@ -1,0 +1,26 @@
+name: Consumer
+options:
+  bundleIdPrefix: io.github.openbunny.themeconsumer
+  deploymentTarget:
+    macOS: '15.0'
+settings:
+  base:
+    SWIFT_VERSION: '6.0'
+    SWIFT_STRICT_CONCURRENCY: complete
+    OTHER_SWIFT_FLAGS: -strict-memory-safety
+    SWIFT_TREAT_WARNINGS_AS_ERRORS: 'YES'
+    CODE_SIGNING_ALLOWED: 'NO'
+    GENERATE_INFOPLIST_FILE: 'YES'
+packages:
+  OpenBunnyTheme:
+    path: ../..
+targets:
+  Consumer:
+    type: application
+    platform: macOS
+    sources: [Sources]
+    dependencies:
+      - package: OpenBunnyTheme
+        product: OpenBunnyTheme
+      - package: OpenBunnyTheme
+        product: OpenBunnyUI
