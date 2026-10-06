@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://github.com/openbunny/theme/compare/v0.1.1...v0.2.0) (2026-10-06)
+
+
+### Features
+
+* **ui:** add SwiftUI counterparts of the @openbunny/react components ([eb09162](https://github.com/openbunny/theme/commit/eb0916221e7a443f97baecde806447866ef8a6fd))
+
 ## [0.1.1](https://github.com/openbunny/theme/compare/v0.1.0...v0.1.1) (2026-10-02)
 
 
