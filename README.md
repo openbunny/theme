@@ -27,7 +27,7 @@ value of their own.
 | ---------------------------- | ------- | ----------------------------------------------------------------- |
 | `@openbunny/theme`           | npm     | `css/`, `dist/` (typed tokens, contrast helper), `fonts/` (WOFF2) |
 | `OpenBunnyTheme`             | SwiftPM | `Color` constants, metrics, font registration, TrueType fonts     |
-| `OpenBunnyUI`                | SwiftPM | `.openbunnyTheme()`, `FlatButtonStyle`, `StatusText`, fonts       |
+| `OpenBunnyUI`                | SwiftPM | `.openbunnyTheme()`, button styles, SwiftUI components, fonts     |
 | `xcode/AccentColor.colorset` | file    | Accent color for an asset catalog, copied by the consumer         |
 
 ## Tokens
@@ -101,6 +101,26 @@ ignores the error gets the system font silently, so handle it.
 pins the color scheme to the `color-scheme` token. `.buttonStyle(.flat)` draws a
 square button with a 1-point border. `StatusText` colors text with `valid` for
 `.enabled` and `expired` for `.disabled` and `.unavailable`. `expired` text must sit on `paper`, `paper-inset` or `background`.
+
+### Components
+
+`OpenBunnyUI` also carries SwiftUI counterparts of the `@openbunny/react`
+components, applying the theme the way the OpenBunny websites do. The
+`ComponentGallery` preview shows each of them.
+
+- `PageSection` and `SectionHeading`: a section under a 1-point rule with a
+  numbered heading. At most two regions of a screen carry a filled ground.
+- `ShellCommandLine` and `CopyButton`: a shell command with token colors and a
+  copy action. `shellTokens(_:)` returns the tokens.
+- `LabeledField`, `KeyValueGroup` with `KeyValueRow`, and `Chip`.
+- `StatusMessage` with a `StatusTone`, and `StatusBanner` for an empty or
+  terminal state; the caller supplies the banner's mark.
+- `.buttonStyle(.outline)` and `.buttonStyle(.inkLink)`.
+
+The components follow the websites' rules. Copy is lowercase. Caller text
+renders with `Text(verbatim:)`, so it is never parsed as Markdown. `foreground`
+is body text, `muted` labels or explains, `ink` is a link, and `sprout` marks
+state only. Weights are regular and bold. No component draws a decorative icon.
 
 `xcode/AccentColor.colorset` holds the accent color, generated from the `sprout`
 token. An asset catalog cannot import Swift constants, so copy the directory into
