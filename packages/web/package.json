@@ -1,6 +1,6 @@
 {
   "name": "@openbunny/theme",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "OpenBunny design tokens: CSS custom properties, typed constants and fonts.",
   "license": "MIT",
   "type": "module",
