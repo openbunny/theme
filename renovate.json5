@@ -10,11 +10,23 @@
       groupName: 'token generation',
       automerge: false,
     },
+    // `engines.node` states the floor this package supports, not a version to
+    // install. The shared preset sets rangeStrategy: 'pin', which rewrote it from
+    // '>=24' to the exact 'v26.13.1' -- a value that contradicts the floor it
+    // replaced, disagrees with the node mise.toml pins for every local and CI run,
+    // and carries a `v` prefix. Widening the supported range is a decision about
+    // what this package promises, so it is made by hand.
+    {
+      matchDepTypes: ['engines'],
+      enabled: false,
+    },
     {
       matchManagers: ['npm'],
       matchDepTypes: ['devDependencies'],
       matchUpdateTypes: ['minor', 'patch'],
-      excludePackageNames: ['style-dictionary', '/^@fontsource//'],
+      // Negated matchPackageNames; excludePackageNames is deprecated and
+      // renovate-config-validator --strict rejects it.
+      matchPackageNames: ['!style-dictionary', '!/^@fontsource//'],
       automerge: true,
     },
   ],
