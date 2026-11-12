@@ -73,6 +73,7 @@ jobs:
       contents: read
     uses: openbunny/.github/.github/workflows/reusable-gitleaks.yml@2050692900f7dcd883e416ebee37a1b97b119203 # v0.3.0
     with:
+      # renovate: datasource=github-releases depName=gitleaks/gitleaks
       version: 8.30.1
 
   zizmor:
@@ -81,6 +82,7 @@ jobs:
       contents: read
     uses: openbunny/.github/.github/workflows/reusable-zizmor.yml@2050692900f7dcd883e416ebee37a1b97b119203 # v0.3.0
     with:
+      # renovate: datasource=pypi depName=zizmor
       version: 1.32.0
 
   dco:

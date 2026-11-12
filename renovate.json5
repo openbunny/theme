@@ -36,6 +36,30 @@
       matchDepTypes: ['engines'],
       enabled: false,
     },
+    // zizmor and gitleaks each have their version written in two places: mise.toml
+    // pins the tool for local runs, and ci.yml passes it to the shared reusable
+    // workflow, whose own default carries the same annotation this repository now
+    // uses. Two managers therefore reach each tool -- mise and the shared preset's
+    // annotation manager -- and without a group each one opens its own pull request
+    // for the same version. Grouping by depName keeps the pair in one.
+    {
+      matchDepNames: ['zizmor'],
+      groupName: 'zizmor',
+    },
+    {
+      matchDepNames: ['gitleaks', 'gitleaks/gitleaks'],
+      groupName: 'gitleaks',
+    },
+    // The gitleaks annotation resolves through github-releases, which returns tag
+    // names, and gitleaks tags releases as `v8.30.1`. Both the workflow input and
+    // mise.toml hold a bare version, so the tag's prefix is stripped here rather
+    // than written into the file. zizmor needs no equivalent: it resolves through
+    // pypi, whose versions are already bare.
+    {
+      matchManagers: ['custom.regex'],
+      matchDepNames: ['gitleaks/gitleaks'],
+      extractVersion: '^v(?<version>.+)$',
+    },
     {
       matchManagers: ['npm'],
       matchDepTypes: ['devDependencies'],

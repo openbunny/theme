@@ -61,9 +61,14 @@ describe('tool versions', () => {
   ] as const) {
     it(`passes the mise.toml ${tool} version to its reusable workflow`, () => {
       const passed = new RegExp(
-        `reusable-${tool}\\.yml@\\S+ # \\S+\\n {4}with:\\n {6}version: (\\S+)\\n`,
+        `reusable-${tool}\\.yml@\\S+ # \\S+\\n {4}with:\\n {6}# renovate: datasource=\\S+ depName=\\S+\\n {6}version: (\\S+)\\n`,
       ).exec(ci)?.[1];
       assert.notEqual(pin(tool), undefined, `${job}: no pin in mise.toml`);
+      assert.notEqual(
+        passed,
+        undefined,
+        `${job}: the version input needs a "# renovate:" annotation directly above it, or nothing updates it when mise.toml moves`,
+      );
       assert.equal(passed, pin(tool));
     });
   }
