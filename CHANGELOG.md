@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.1](https://github.com/openbunny/theme/compare/v0.2.0...v0.2.1) (2026-11-12)
+
+
+### Bug Fixes
+
+* **renovate:** Hold the ubuntu runner label on 24.04 ([ef2a2c4](https://github.com/openbunny/theme/commit/ef2a2c43befe17b21c9baa0472a07cc663873496))
+* **renovate:** Track the reusable workflow tool versions ([9e9a0fc](https://github.com/openbunny/theme/commit/9e9a0fc71f20e7d49ba8e145e644c200144556bb))
+
 ## [0.2.0](https://github.com/openbunny/theme/compare/v0.1.1...v0.2.0) (2026-10-06)
 
 
