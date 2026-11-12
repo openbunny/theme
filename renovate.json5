@@ -3,69 +3,81 @@
   extends: ['github>openbunny/.github'],
   postUpdateOptions: ['npmDedupe'],
   packageRules: [
-    // A token output changes when the generator or the fonts change, so these
-    // bump through a pull request that carries the regenerated files.
     {
+      description: [
+        'A token output changes when the generator or the fonts change, so these',
+        'bump through a pull request that carries the regenerated files.',
+      ],
       matchPackageNames: ['style-dictionary', '/^@fontsource//'],
       groupName: 'token generation',
       automerge: false,
     },
-    // HOLDBACK: the ubuntu runner label stays on 24.04.
-    // ubuntu-26.04 is generally available on GitHub, but actionlint does not know
-    // the label in any release -- not 1.7.12, the newest, and not its main branch --
-    // and reports `label "ubuntu-26.04" is unknown` for every job that uses it.
-    // `just actions-lint` gates on actionlint and the `actions` CI job runs it, so
-    // the move cannot be green here. Declaring the label under
-    // self-hosted-runner.labels in an actionlint.yaml would silence that only by
-    // describing a GitHub-hosted runner as self-hosted, which also drops the
-    // ubuntu-specific checks actionlint would otherwise apply to those jobs.
-    // ubuntu-24.04 is still fully supported, so waiting costs nothing.
-    // Closes when: actionlint ships a release that recognises ubuntu-26.04.
     {
+      description: [
+        'HOLDBACK: the ubuntu runner label stays on 24.04.',
+        'ubuntu-26.04 is generally available on GitHub, but actionlint does not know',
+        'the label in any release -- not 1.7.12, the newest, and not its main branch --',
+        'and reports it as unknown for every job that uses it. `just actions-lint` gates',
+        'on actionlint and the `actions` CI job runs it, so the move cannot be green.',
+        'Declaring the label under self-hosted-runner.labels in an actionlint.yaml would',
+        'silence that only by describing a GitHub-hosted runner as self-hosted, which',
+        'also drops the ubuntu-specific checks actionlint applies to those jobs.',
+        'ubuntu-24.04 is still fully supported, so waiting costs nothing.',
+        'Closes when: actionlint ships a release that recognises ubuntu-26.04.',
+      ],
       matchDatasources: ['github-runners'],
       matchPackageNames: ['ubuntu'],
       allowedVersions: '<26',
     },
-    // `engines.node` states the floor this package supports, not a version to
-    // install. The shared preset sets rangeStrategy: 'pin', which rewrote it from
-    // '>=24' to the exact 'v26.13.1' -- a value that contradicts the floor it
-    // replaced, disagrees with the node mise.toml pins for every local and CI run,
-    // and carries a `v` prefix. Widening the supported range is a decision about
-    // what this package promises, so it is made by hand.
     {
+      description: [
+        '`engines.node` states the floor this package supports, not a version to',
+        "install. The shared preset sets rangeStrategy: 'pin', which rewrote it from",
+        "'>=24' to the exact 'v26.13.1' -- a value that contradicts the floor it",
+        'replaced, disagrees with the node mise.toml pins for every local and CI run,',
+        'and carries a `v` prefix. Widening the supported range is a decision about',
+        'what this package promises, so it is made by hand.',
+      ],
       matchDepTypes: ['engines'],
       enabled: false,
     },
-    // zizmor and gitleaks each have their version written in two places: mise.toml
-    // pins the tool for local runs, and ci.yml passes it to the shared reusable
-    // workflow, whose own default carries the same annotation this repository now
-    // uses. Two managers therefore reach each tool -- mise and the shared preset's
-    // annotation manager -- and without a group each one opens its own pull request
-    // for the same version. Grouping by depName keeps the pair in one.
     {
+      description: [
+        'zizmor and gitleaks each have their version written in two places: mise.toml',
+        'pins the tool for local runs, and ci.yml passes it to the shared reusable',
+        'workflow, whose own default carries the same annotation this repository uses.',
+        "Two managers therefore reach each tool -- mise and the shared preset's",
+        'annotation manager -- and ungrouped each opens its own pull request for one',
+        'version. tests/workflows.test.ts asserts the two copies agree.',
+      ],
       matchDepNames: ['zizmor'],
       groupName: 'zizmor',
     },
     {
+      description: 'Grouped with its mise.toml pin, as zizmor is above.',
       matchDepNames: ['gitleaks', 'gitleaks/gitleaks'],
       groupName: 'gitleaks',
     },
-    // The gitleaks annotation resolves through github-releases, which returns tag
-    // names, and gitleaks tags releases as `v8.30.1`. Both the workflow input and
-    // mise.toml hold a bare version, so the tag's prefix is stripped here rather
-    // than written into the file. zizmor needs no equivalent: it resolves through
-    // pypi, whose versions are already bare.
     {
+      description: [
+        'The gitleaks annotation resolves through github-releases, which returns tag',
+        'names, and gitleaks tags releases as `v8.30.1`. Both the workflow input and',
+        "mise.toml hold a bare version, so the tag's prefix is stripped here rather",
+        'than written into the file. zizmor needs no equivalent: it resolves through',
+        'pypi, whose versions are already bare.',
+      ],
       matchManagers: ['custom.regex'],
       matchDepNames: ['gitleaks/gitleaks'],
       extractVersion: '^v(?<version>.+)$',
     },
     {
+      description: [
+        'Negated matchPackageNames rather than excludePackageNames, which is',
+        'deprecated and which renovate-config-validator --strict rejects.',
+      ],
       matchManagers: ['npm'],
       matchDepTypes: ['devDependencies'],
       matchUpdateTypes: ['minor', 'patch'],
-      // Negated matchPackageNames; excludePackageNames is deprecated and
-      // renovate-config-validator --strict rejects it.
       matchPackageNames: ['!style-dictionary', '!/^@fontsource//'],
       automerge: true,
     },
