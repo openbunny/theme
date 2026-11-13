@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.2](https://github.com/openbunny/theme/compare/v0.2.1...v0.2.2) (2026-11-13)
+
+
+### Bug Fixes
+
+* **release:** Allow the publish workflow to be run manually ([bcb0c60](https://github.com/openbunny/theme/commit/bcb0c600102149ad8ca7b9fdabe5cec6f322a851))
+
 ## [0.2.1](https://github.com/openbunny/theme/compare/v0.2.0...v0.2.1) (2026-11-12)
 
 
