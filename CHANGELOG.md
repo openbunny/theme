@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.3](https://github.com/openbunny/theme/compare/v0.2.2...v0.2.3) (2026-11-14)
+
+
+### Bug Fixes
+
+* **renovate:** Sign off Renovate's commits so its branches can pass DCO ([5e7beb8](https://github.com/openbunny/theme/commit/5e7beb85962203f01448d17bd4cdbba8635913ae))
+
 ## [0.2.2](https://github.com/openbunny/theme/compare/v0.2.1...v0.2.2) (2026-11-13)
 
 
