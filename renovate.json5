@@ -2,6 +2,11 @@
   $schema: 'https://docs.renovatebot.com/renovate-schema.json',
   extends: ['github>openbunny/.github'],
   postUpdateOptions: ['npmDedupe'],
+
+  // The DCO check gates every pull request on a sign-off trailer that matches the
+  // commit author, and Renovate authors its own commits. Without this its branches
+  // can never go green, which is what stalled the whole queue.
+  commitBody: 'Signed-off-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>',
   packageRules: [
     {
       description: [
