@@ -83,7 +83,7 @@ jobs:
     uses: openbunny/.github/.github/workflows/reusable-zizmor.yml@2050692900f7dcd883e416ebee37a1b97b119203 # v0.3.0
     with:
       # renovate: datasource=pypi depName=zizmor
-      version: 1.32.0
+      version: 1.33.1
 
   dco:
     name: DCO
