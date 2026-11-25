@@ -109,6 +109,7 @@ provenance = "github-attestations"
 version = "2.46.0"
 backend = "aqua:yonaskolb/XcodeGen"
 specifiers = ["2.46.0"]
+unsupported_platforms = ["linux-x64"]
 
 [tools.xcodegen."platforms.macos-arm64"]
 checksum = "sha256:4d9e34b62172d645eed6457cac13fc222569974098ef4ee9c3368bedf0196806"
